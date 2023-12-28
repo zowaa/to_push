@@ -1,6 +1,10 @@
+#pragma once
 #include "Socket.hpp"
 #include "Client.hpp"
 #include <sys/select.h>
+#include "../conf/Lexer.hpp"
+#include "../conf/Parser.hpp"
+
 
 class Socket;
 class Client;
@@ -11,7 +15,7 @@ class Server {
 		fd_set tmp_read_fds, tmp_write_fds;
 		int fdmax;
 		Client client;
-		
+
 
 	public:
 		//canonical form

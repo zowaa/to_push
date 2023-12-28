@@ -1,5 +1,5 @@
 #include "Server.hpp"
-#include "server.hpp"
+
 
 void Server::handleServers(Socket socket)
 {
@@ -18,8 +18,8 @@ void Server::handleServers(Socket socket)
 		// run through the existing connections looking for data to read
 		for (int i = 0; i <= fdmax; i++)
 		{
-			if (FD_ISSET(i, &tmp_read_fds)) // we got one
-			{
+			// if (FD_ISSET(i, &tmp_read_fds)) // we got one
+			// {
 				// if (i == socket.getServerSocket())	// handle new connections
 				// {
 				// 	socklen_t sin_size;
@@ -44,13 +44,6 @@ void Server::handleServers(Socket socket)
 }
 Server::Server()
 {
-	FD_ZERO(&master_read_fds);
-	FD_ZERO(&master_write_fds);
-	FD_ZERO(&tmp_read_fds);
-	FD_ZERO(&tmp_write_fds);
-}
-Server & Server::operator=(const Server & server)
-{
-// TODO: insert return statement here
 }
 
+Server::~Server() { }

@@ -1,8 +1,10 @@
+#pragma once
 #include <netinet/in.h>
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
+#include "../conf/Parser.hpp"
 
 class Socket
 {
@@ -26,6 +28,6 @@ class Socket
 		void setServerAddress(struct sockaddr_in server_address);
 
 		//methods
-		void createServers();
+		void createServers(const std::vector<Parser *>       *  servers);
 };
 
